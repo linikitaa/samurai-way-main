@@ -14,3 +14,7 @@
 .navItem a:hover {
     color: #1babb7;
 }
+
+.navItem a.active {
+    color: #e31818;
+}

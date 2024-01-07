@@ -8,7 +8,7 @@ export const Profile = () => {
             <div className={s.bgImage}></div>
             <div className={s.profile}>
                 <div className={s.avatar}></div>
-                <div className={s.description}>Nikita Li</div>
+                <div className={s.description}>Nikita</div>
             </div>
             <MyPosts/>
         </div>
