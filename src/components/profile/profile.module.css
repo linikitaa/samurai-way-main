@@ -1,0 +1,23 @@
+
+.profileWrapper {
+
+}
+.bg-image {
+    width: 100%;
+    height: 50px;
+    background-color: #1babb7;
+}
+
+.profile {
+    display: flex;
+}
+
+.avatar {
+    width: 30px;
+    height: 30px;
+    background-color: #ad72f5;
+}
+
+.description {
+
+}
