@@ -1,6 +1,5 @@
 .headerWrapper{
-    grid-area: h;
-    background-color: #52b974;
-
+    background-color: #238594;
+    min-height: 50px;
 }
 

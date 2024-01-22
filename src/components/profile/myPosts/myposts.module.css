@@ -1,3 +1,13 @@
-.posts {
+.mypostWrap {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+.input-btn {
 
+}
+.posts {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }

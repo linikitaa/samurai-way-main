@@ -1,29 +1,28 @@
 import React from 'react';
 import s from './dialogs.module.css'
 import {Dialog} from "./dialog/Dialog";
+import {MessagesPageType} from "../../data/data";
 import {Messages} from "./message/Messages";
 
+type DialogsType = {
+    messagesPage:MessagesPageType
 
-export const Dialogs = () => {
+}
+
+export const Dialogs = (props: DialogsType) => {
     return (
         <div className={s.dialogs}>
             <div className={s.dialogItems}>
-                <Dialog name={'Valera'} id={'1'}/>
-                <Dialog name={'Sveta'} id={'2'}/>
-                <Dialog name={'Andrey'} id={'3'}/>
-                <Dialog name={'Masha'} id={'4'}/>
-                <Dialog name={'Petya'} id={'5'}/>
-                <Dialog name={'Viktor'} id={'6'}/>
+                <Dialog dialogs={props.messagesPage.dialogs}/>
             </div>
+
             <div className={s.messages}>
-                <Messages name={'Hi'}/>
-                <Messages name={'How are you'}/>
-                <Messages name={'Yoo'}/>
+                <Messages messages={props.messagesPage.messages}/>
             </div>
-            {/*<Routes>*/}
-            {/*    <Route path={'/dialogs/dialog1'} element={<Dialog1/>}/>*/}
-            {/*</Routes>*/}
         </div>
     );
 };
 
+{/*<Routes>*/}
+{/*    <Route path={'/dialogs/dialog1'} element={<Dialog1/>}/>*/}
+{/*</Routes>*/}

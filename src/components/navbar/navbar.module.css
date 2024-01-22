@@ -1,6 +1,8 @@
 .navList {
-    grid-area: n;
-    background-color: #e5d201;
+    background-color: #bdb8ac;
+    min-width: 250px;
+    min-height: 300px;
+    padding: 30px;
 }
 
 .navItem {
@@ -9,12 +11,13 @@
 .navItem a{
     color: #000000;
     text-decoration: none;
+    font-size: 20px;
 }
 
 .navItem a:hover {
-    color: #1babb7;
+    color: #ffffff;
 }
 
 .navItem a.active {
-    color: #e31818;
+    color: #238594;
 }

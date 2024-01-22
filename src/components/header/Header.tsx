@@ -3,7 +3,7 @@ import s from './header.module.css'
 export const Header = () => {
     return (
             <header className={s.headerWrapper}>
-                <div>sdvsdvds</div>
+                <div>Header</div>
             </header>
     );
 };

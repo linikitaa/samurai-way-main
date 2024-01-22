@@ -2,36 +2,34 @@ import React from 'react';
 import './App.css';
 import {Header} from "./components/header/Header";
 import {Profile} from "./components/profile/Profile";
-import {Navbar} from "./components/navbar/Navbar";
+import {Navbar, PATH} from "./components/navbar/Navbar";
 import {Dialogs} from "./components/dialogs/Dialogs";
 import {Route, Routes} from "react-router-dom";
-import {News} from "./components/news/News";
-import {Music} from "./components/music/Music";
-import {Settings} from "./components/settings/Settings";
+import {Error404} from "./components/Error404";
+import {StateType} from "./data/data";
 
-function App() {
+type AppProps = {
+    state:StateType
+}
+
+function App(props:AppProps) {
     return (
         <div className="app-wrapper">
-                <div className={'container'}>
-                    <Header/>
+            <div className={'container'}>
+                <Header/>
+                <div className={'section'}>
                     <Navbar/>
-                    <div className={'app-wrapper-content'}>
+                    <Routes>
+                        <Route path={PATH.profile} element={<Profile posts={props.state.profilePage.posts}/>}/>
+                        <Route path={PATH.dialogs} element={<Dialogs messagesPage={props.state.messagesPage}/>}/>
 
-                <Routes>
-                    <Route path={'/profile'} element={<Profile/>}/>
-                    <Route path={'/dialogs'} element={<Dialogs/>}/>
-                    <Route path={'/news'} element={<News/>}/>
-                    <Route path={'/music'} element={<Music/>}/>
-                    <Route path={'/settings'} element={<Settings/>}/>
 
-                    {/*<Route path={'/*'} element={<Navigate to={'/pageError404'}/>} />*/}
-                    {/*<Route path={'/pageError404'} element={<Error404/>}/>*/}
-                </Routes>
-                        {/*<Profile/>*/}
-                        {/*<Dialogs/>*/}
-                    </div>
-
+                        {/*<Route path={'/*'} element={<Navigate to={'/pageError404'}/>}/>*/}
+                        {/*<Route path={'/pageError404'} element={<Error404/>}/>*/}
+                    </Routes>
                 </div>
+                <div className={'footer'}>Footer</div>
+            </div>
         </div>
     );
 }
