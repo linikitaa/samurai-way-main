@@ -21,7 +21,7 @@ export const MyPosts = (props:MyPostsProps) => {
             <div className={'input-btn'}>
                 <input value={newPost}
                        onChange={onChangeHandler}
-                ></input>
+                />
                 <button onClick={addPostHandler}>Add post</button>
             </div>
             <div className={s.posts}>
