@@ -1,7 +1,7 @@
 .app-wrapper {
     background-color: #e1e1e1;
     position: relative;
-
+    height: 100vh;
 }
 
 .container {
@@ -15,7 +15,7 @@
     display: flex;
     gap: 15px;
     padding: 15px 0;
-
+    height: calc(100vh - 130px);
 }
 
 .footer {

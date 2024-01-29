@@ -10,11 +10,13 @@ export const Navbar = () => {
     return (
         <nav className={s.navList}>
             <div className={s.navItem}>
-                <NavLink className={({isActive})=>isActive ? s.active :''} to={PATH.profile}>Profile
+                <NavLink className={({isActive})=>isActive ? s.active :''}
+                         to={'/profile'}>Profile
                 </NavLink>
             </div>
             <div className={s.navItem}>
-                <NavLink className={({isActive})=>isActive ? s.active :''}  to={PATH.dialogs}>Dialogs
+                <NavLink className={({isActive})=>isActive ? s.active :''}
+                         to={'/dialogs'}>Dialogs
                 </NavLink>
             </div>
         </nav>

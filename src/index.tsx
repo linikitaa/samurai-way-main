@@ -1,13 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
+import {data} from './data/data'
+import ReactDOM from "react-dom";
 import {BrowserRouter} from "react-router-dom";
-import {state} from './data/data'
+import App from "./App";
+import React from "react";
 
 ReactDOM.render(
     <BrowserRouter>
-        <App state={state}/>
+        <App data={data}/>
     </BrowserRouter>,
     document.getElementById('root')
 );
