@@ -1,4 +1,4 @@
-import {PostsType} from "../data/data";
+import {PostsType} from "../../data/data";
 
 export const postsReducer = (posts: PostsType[], action: postsReducerType) => {
     switch (action.type) {

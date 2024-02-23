@@ -1,28 +1,35 @@
 import React from 'react';
 import s from './profile.module.css'
-import {MyPosts} from "./myPosts/MyPosts";
-import {PostsType} from "../../data/data";
+import {PostsType, ProfilePageType} from "../../data/data";
 import {useParams} from "react-router-dom";
+import MyPosts from "./myPosts/MyPosts";
 
 
 type ProfileProps = {
-    posts:PostsType[]
+    profilePage: ProfilePageType
+    dispatch: (action: any, value?:string) => void
 
 }
-export const Profile = (props:ProfileProps) => {
 
-    const params = useParams()
+class Profile extends React.Component<ProfileProps> {
 
-    return (
-        <div className={s.profileWrapper}>
-            <div className={s.profile}>
-                <div className={s.avatar}></div>
-                <div className={s.description}>Nikita</div>
+    render() {
+
+        const {profilePage, dispatch} = this.props
+        return (
+            <div className={s.profileWrapper}>
+                <div className={s.profile}>
+                    <div className={s.avatar}></div>
+                    <div className={s.description}>Nikita</div>
+                </div>
+                <MyPosts profilePage={profilePage}
+                         dispatch={dispatch}
+                />
             </div>
-            <MyPosts posts={props.posts}
+        )
+    }
+}
+export default Profile;
 
-            />
-        </div>
-    );
-};
+
 

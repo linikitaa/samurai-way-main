@@ -1,37 +1,53 @@
-import React, {useReducer} from 'react';
+import React from 'react';
 import './App.css';
-import {Header} from "./components/header/Header";
-import {Navbar, PATH} from "./components/navbar/Navbar";
-import { RootStateType, data} from "./data/data";
+
+import {StateType, store, storeType} from "./data/data";
+
+import Header from "./components/header/Header";
 import RoadMap from "./components/Roadmap/RoadMap";
+import Navbar from "./components/navbar/Navbar";
 
 type AppProps = {
-    data:RootStateType
+    state: StateType
+    dispatch: (action: any, value?:string) => void
+
 }
 
-function App(props:AppProps) {
+class App extends React.Component<AppProps> {
+    render() {
 
+        const{state,dispatch} = this.props
 
-    return (
-        <div className="app-wrapper">
-            <div className={'container'}>
-                <Header/>
-                <div className={'section'}>
-                    <Navbar/>
-                    <RoadMap data={props.data}/>
+        return (
+            <div className="app-wrapper">
+                <div className={'container'}>
+                    <Header/>
+                    <div className={'section'}>
+                        <Navbar messagesPage={state.messagesPage} />
+                        <RoadMap state={store.getState()} dispatch={dispatch}/>
+                    </div>
+                    <div className={'footer'}>Footer</div>
                 </div>
-                <div className={'footer'}>Footer</div>
             </div>
-        </div>
-    );
+        )
+    }
 }
 
 export default App;
 
-// <NavLink to={'/page/0'}> Page-1</NavLink>
-// <Routes>
-//     <Route path={'/'} element={<Navigate to={'/page1'}/>} />
-//     <Route path={'/page/:id'} element={<Page pages={dataState.pages}/>} />
-//     <Route path={'/*'} element={<Navigate to={'/pageError404'}/>} />
-//     <Route path={'/pageError404'} element={<Error404/>}/>
-// </Routes>
+// function App(props:AppProps) {
+//
+//
+//     return (
+//         <div className="app-wrapper">
+//             <div className={'container'}>
+//                 <Header/>
+//                 <div className={'section'}>
+//                     <Navbar/>
+//                     <RoadMap data={props.data} addPost={props.addPost}/>
+//                 </div>
+//                 <div className={'footer'}>Footer</div>
+//             </div>
+//         </div>
+//     );
+// }

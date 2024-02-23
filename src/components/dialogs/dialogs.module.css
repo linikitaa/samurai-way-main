@@ -12,18 +12,18 @@
 }
 
 .dialog {
-
-}
-.dialog {
     padding: 10px;
     color: #000000;
     font-size: 25px;
     text-decoration: none;
     border: 2px solid #000000;
     border-radius: 5px;
+
+
+
 }
-.dialogItems .active {
-    color: red;
+.active {
+    background-color: #ffffff;
 }
 
 .dialog:hover {

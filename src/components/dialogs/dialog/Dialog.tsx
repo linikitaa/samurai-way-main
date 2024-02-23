@@ -17,7 +17,9 @@ export const Dialog: React.FC<DialogProps> = (props) => {
                         <NavLink
                             to={`/dialogs/${el.id}`}
                             key={el.id}
-                            className={s.dialog}>{el.name}</NavLink>
+                            className={({ isActive }) => isActive ? `${s.active} ${s.dialog}` : s.dialog}
+                        > {el.name}
+                        </NavLink>
                     )
                 })
             }
@@ -26,3 +28,4 @@ export const Dialog: React.FC<DialogProps> = (props) => {
     );
 };
 
+//className={({isActive})=>isActive ? s.active :''}
