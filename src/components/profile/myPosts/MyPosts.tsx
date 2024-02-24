@@ -1,11 +1,12 @@
 import React, {ChangeEvent} from 'react';
 import s from './myposts.module.css'
-import {ProfilePageType} from "../../../data/data";
+import {ActionsType, ProfilePageType} from "../../../data/data";
 import Post from "./Post/Post";
+import {addPostAC, updatePostAC} from "../../../redux/reducers/profilePageReducers";
 
 type MyPostsProps = {
     profilePage: ProfilePageType
-    dispatch: (action: any, value?:string) => void
+    dispatch: (action:ActionsType) => void
 }
 
 class MyPosts extends React.Component<MyPostsProps, {}> {
@@ -14,12 +15,10 @@ class MyPosts extends React.Component<MyPostsProps, {}> {
         const {profilePage, dispatch} = this.props
         const onChangeHandler = (e: ChangeEvent<HTMLInputElement>)  => {
             let value = e.currentTarget.value
-            let action = {type:'UPDATE-NEW-POST-TEXT',value}
-            dispatch(action)
+            dispatch(updatePostAC(value))
         }
         const addPostHandler = () => {
-            dispatch({type:'ADD-POST'})
-            dispatch('')
+            dispatch(addPostAC(profilePage.newValueForPost))
         }
 
         return (

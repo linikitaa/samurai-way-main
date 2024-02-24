@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 
-import {StateType, store, storeType} from "./data/data";
+import {ActionsType, StateType, store} from "./data/data";
 
 import Header from "./components/header/Header";
 import RoadMap from "./components/Roadmap/RoadMap";
@@ -9,7 +9,7 @@ import Navbar from "./components/navbar/Navbar";
 
 type AppProps = {
     state: StateType
-    dispatch: (action: any, value?:string) => void
+    dispatch: (action:ActionsType) => void
 
 }
 
@@ -23,7 +23,7 @@ class App extends React.Component<AppProps> {
                 <div className={'container'}>
                     <Header/>
                     <div className={'section'}>
-                        <Navbar messagesPage={state.messagesPage} />
+                        <Navbar dialogsPage={state.dialogsPage} />
                         <RoadMap state={store.getState()} dispatch={dispatch}/>
                     </div>
                     <div className={'footer'}>Footer</div>

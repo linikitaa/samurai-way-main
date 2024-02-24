@@ -1,7 +1,7 @@
 import React from 'react';
 import s from "../dialogs.module.css";
 import {NavLink, useParams} from "react-router-dom";
-import {DialogsType, MessagesPageType} from "../../../data/data";
+import {DialogsType} from "../../../data/data";
 
 type DialogProps = {
     dialogs: DialogsType[]

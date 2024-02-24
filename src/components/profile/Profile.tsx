@@ -1,13 +1,13 @@
 import React from 'react';
 import s from './profile.module.css'
-import {PostsType, ProfilePageType} from "../../data/data";
+import {ActionsType, PostsType, ProfilePageType} from "../../data/data";
 import {useParams} from "react-router-dom";
 import MyPosts from "./myPosts/MyPosts";
 
 
 type ProfileProps = {
     profilePage: ProfilePageType
-    dispatch: (action: any, value?:string) => void
+    dispatch: (action:ActionsType) => void
 
 }
 

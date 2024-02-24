@@ -3,11 +3,11 @@ import {Navigate, Route, Routes} from "react-router-dom";
 import {Error404} from "../Error404";
 import Profile from "../profile/Profile";
 import Dialogs from "../dialogs/Dialogs";
-import {StateType} from "../../data/data";
+import {ActionsType, StateType} from "../../data/data";
 
 type RoadMapProps = {
     state:StateType
-    dispatch:(action: any, value?:string)=>void
+    dispatch:(action:ActionsType)=>void
 }
 
 class RoadMap extends React.Component<RoadMapProps> {
@@ -18,8 +18,8 @@ class RoadMap extends React.Component<RoadMapProps> {
         return (
             <Routes>
                 <Route path={'/profile'} element={ <Profile profilePage={state.profilePage} dispatch={dispatch}/>}/>
-                <Route path={'/dialogs'} element={<Dialogs messagesPage={state.messagesPage}/>}/>
-                <Route path={'/dialogs/:id'} element={<Dialogs messagesPage={state.messagesPage}/>}/>
+                {/*<Route path={'/dialogs'} element={<Dialogs dialogsPage={state.dialogsPage} dispatch={dispatch}/>}/>*/}
+                <Route path={'/dialogs/:id'} element={<Dialogs dialogsPage={state.dialogsPage}  dispatch={dispatch}/>}/>
 
 
                 <Route path={'/*'} element={<Navigate to={'/pageError404'}/>}/>

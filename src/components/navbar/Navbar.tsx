@@ -1,18 +1,18 @@
 import React from 'react';
 import s from './navbar.module.css'
 import {NavLink} from "react-router-dom";
-import {MessagesPageType} from "../../data/data";
+import {DialogsPageType} from "../../data/data";
 
 export const PATH = {
     profile:"/profile",
     dialogs:"/dialogs"
 }
 type NavbarProps = {
-    messagesPage:MessagesPageType
+    dialogsPage:DialogsPageType
 }
 class Navbar extends React.Component<NavbarProps> {
     render() {
-        const{messagesPage}=this.props
+        const{dialogsPage}=this.props
 
         return (
             <nav className={s.navList}>
@@ -23,7 +23,7 @@ class Navbar extends React.Component<NavbarProps> {
                 </div>
                 <div className={s.navItem}>
                     <NavLink className={({isActive})=>isActive ? s.active :''}
-                             to={`/dialogs/${messagesPage.dialogs[0].id}`}>Dialogs
+                             to={`/dialogs/${dialogsPage.dialogs[0].id}`}>Dialogs
                     </NavLink>
                 </div>
             </nav>
